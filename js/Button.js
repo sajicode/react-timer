@@ -6,7 +6,7 @@ class Button extends React.Component {
   render() {
     return React.createElement("button", {
       type: "button",
-      className: "btn-success btn",
+      className: "btn-success btn btn-lg mx-2",
       onClick: () => {
         this.props.startTimer(this.props.time);
       }
