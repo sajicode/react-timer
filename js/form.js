@@ -9,7 +9,7 @@ class Form extends React.Component {
     }), React.createElement("br", null), React.createElement("button", {
       className: "btn btn-lg btn-primary",
       onClick: this.props.handleSubmit
-    }, "Start Timer"), React.createElement("span", null, this.props.accNum.length > 0 ? 'You entered: ' + this.props.accNum : ''));
+    }, "Set Time"), React.createElement("span", null, this.props.accNum.length > 0 ? 'You entered: ' + this.props.accNum : ''));
   }
 
 }

@@ -41,7 +41,7 @@ class TimerWrapper extends React.Component {
 		});
 	}
 	handleSubmit(event) {
-		console.log(event.target);
+		console.log(this.state.accountNumber);
 	}
 	handleChange(event) {
 		console.log('Typed: ', event.target.value);
@@ -52,9 +52,9 @@ class TimerWrapper extends React.Component {
 			<div className="col">
 				<h2 className="text-primary text-center">Countdown</h2>
 				<div className="btn-group my-4" role="group">
-					<Button time="5" startTimer={this.startTimer} />
-					<Button time="10" startTimer={this.startTimer} />
-					<Button time="15" startTimer={this.startTimer} />
+					<Button time={this.state.accountNumber} startTimer={this.startTimer} label="Start/Resume" />
+					<Button time="10" label="Pause" />
+					<Button time="15" label="Reset" />
 				</div>
 				<Timer timeLeft={this.state.timeLeft} />
 				<audio id="end-of-time" src="flute.wav" preload="auto" />

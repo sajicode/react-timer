@@ -11,7 +11,7 @@ class Button extends React.Component {
 					this.props.startTimer(this.props.time);
 				}}
 			>
-				{this.props.time} seconds
+				{this.props.label}
 			</button>
 		);
 	}

@@ -51,7 +51,7 @@ class TimerWrapper extends React.Component {
   }
 
   handleSubmit(event) {
-    console.log(event.target);
+    console.log(this.state.accountNumber);
   }
 
   handleChange(event) {
@@ -70,14 +70,15 @@ class TimerWrapper extends React.Component {
       className: "btn-group my-4",
       role: "group"
     }, React.createElement(Button, {
-      time: "5",
-      startTimer: this.startTimer
+      time: this.state.accountNumber,
+      startTimer: this.startTimer,
+      label: "Start/Resume"
     }), React.createElement(Button, {
       time: "10",
-      startTimer: this.startTimer
+      label: "Pause"
     }), React.createElement(Button, {
       time: "15",
-      startTimer: this.startTimer
+      label: "Reset"
     })), React.createElement(Timer, {
       timeLeft: this.state.timeLeft
     }), React.createElement("audio", {

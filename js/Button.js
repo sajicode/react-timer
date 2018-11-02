@@ -10,7 +10,7 @@ class Button extends React.Component {
       onClick: () => {
         this.props.startTimer(this.props.time);
       }
-    }, this.props.time, " seconds");
+    }, this.props.label);
   }
 
 }

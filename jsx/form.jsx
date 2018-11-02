@@ -12,7 +12,7 @@ class Form extends React.Component {
 				/>
 				<br />
 				<button className="btn btn-lg btn-primary" onClick={this.props.handleSubmit}>
-					Start Timer
+					Set Time
 				</button>
 				<span>{this.props.accNum.length > 0 ? 'You entered: ' + this.props.accNum : ''}</span>
 			</div>
