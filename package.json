@@ -6,10 +6,7 @@
 	"scripts": {
 		"build": "./node_modules/.bin/babel jsx -d js -w"
 	},
-	"keywords": [
-		"react",
-		"countdown timer"
-	],
+	"keywords": [ "react", "countdown timer" ],
 	"author": "Adams Banjo",
 	"license": "MIT",
 	"devDependencies": {
