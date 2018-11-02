@@ -5,11 +5,8 @@ class Form extends React.Component {
       className: "form-control",
       onChange: this.props.handleChange,
       placeholder: "123456",
-      value: this.props.accNum
-    }), React.createElement("br", null), React.createElement("button", {
-      className: "btn btn-lg btn-primary",
-      onClick: this.props.handleSubmit
-    }, "Set Time"), React.createElement("span", null, this.props.accNum.length > 0 ? 'You entered: ' + this.props.accNum : ''));
+      value: this.props.timeStart
+    }), React.createElement("br", null), React.createElement("span", null, this.props.timeStart.length > 0 ? 'Timer Starts at : ' + this.props.timeStart + ' seconds' : ' '));
   }
 
 }

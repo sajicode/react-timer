@@ -4,13 +4,12 @@ class TimerWrapper extends React.Component {
 		this.state = {
 			timeLeft: null,
 			timer: null,
-			accountNumber: ''
+			timeStart: ''
 		};
 		this.startTimer = this.startTimer.bind(this);
 		this.pauseTimer = this.pauseTimer.bind(this);
 		this.resumeTimer = this.resumeTimer.bind(this);
 		this.resetTimer = this.resetTimer.bind(this);
-		this.handleSubmit = this.handleSubmit.bind(this);
 		this.handleChange = this.handleChange.bind(this);
 	}
 	startTimer(timeLeft) {
@@ -40,29 +39,20 @@ class TimerWrapper extends React.Component {
 			timeLeft: null
 		});
 	}
-	handleSubmit(event) {
-		console.log(this.state.accountNumber);
-	}
 	handleChange(event) {
 		console.log('Typed: ', event.target.value);
-		this.setState({ accountNumber: event.target.value.replace(/[^0-9]/gi, '') });
+		this.setState({ timeStart: event.target.value.replace(/[^0-9]/gi, '') });
 	}
 	render() {
 		return (
 			<div className="col">
 				<h2 className="text-primary text-center">Countdown</h2>
 				<div className="btn-group my-4" role="group">
-					<Button time={this.state.accountNumber} startTimer={this.startTimer} label="Start/Resume" />
-					<Button time="10" label="Pause" />
-					<Button time="15" label="Reset" />
+					<Button time={this.state.timeStart} startTimer={this.startTimer} label="Start" />
 				</div>
 				<Timer timeLeft={this.state.timeLeft} />
 				<audio id="end-of-time" src="flute.wav" preload="auto" />
-				<Form
-					handleSubmit={this.handleSubmit}
-					handleChange={this.handleChange}
-					accNum={this.state.accountNumber}
-				/>
+				<Form handleChange={this.handleChange} timeStart={this.state.timeStart} />
 			</div>
 		);
 	}

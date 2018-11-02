@@ -4,13 +4,12 @@ class TimerWrapper extends React.Component {
     this.state = {
       timeLeft: null,
       timer: null,
-      accountNumber: ''
+      timeStart: ''
     };
     this.startTimer = this.startTimer.bind(this);
     this.pauseTimer = this.pauseTimer.bind(this);
     this.resumeTimer = this.resumeTimer.bind(this);
     this.resetTimer = this.resetTimer.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -50,14 +49,10 @@ class TimerWrapper extends React.Component {
     });
   }
 
-  handleSubmit(event) {
-    console.log(this.state.accountNumber);
-  }
-
   handleChange(event) {
     console.log('Typed: ', event.target.value);
     this.setState({
-      accountNumber: event.target.value.replace(/[^0-9]/gi, '')
+      timeStart: event.target.value.replace(/[^0-9]/gi, '')
     });
   }
 
@@ -70,15 +65,9 @@ class TimerWrapper extends React.Component {
       className: "btn-group my-4",
       role: "group"
     }, React.createElement(Button, {
-      time: this.state.accountNumber,
+      time: this.state.timeStart,
       startTimer: this.startTimer,
-      label: "Start/Resume"
-    }), React.createElement(Button, {
-      time: "10",
-      label: "Pause"
-    }), React.createElement(Button, {
-      time: "15",
-      label: "Reset"
+      label: "Start"
     })), React.createElement(Timer, {
       timeLeft: this.state.timeLeft
     }), React.createElement("audio", {
@@ -86,9 +75,8 @@ class TimerWrapper extends React.Component {
       src: "flute.wav",
       preload: "auto"
     }), React.createElement(Form, {
-      handleSubmit: this.handleSubmit,
       handleChange: this.handleChange,
-      accNum: this.state.accountNumber
+      timeStart: this.state.timeStart
     }));
   }
 
