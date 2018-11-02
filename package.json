@@ -1,0 +1,22 @@
+{
+	"name": "react-timer",
+	"version": "1.0.0",
+	"description": "Countdown timer",
+	"main": "script.js",
+	"scripts": {
+		"build": "./node_modules/.bin/babel jsx -d js -w"
+	},
+	"keywords": [
+		"react",
+		"countdown timer"
+	],
+	"author": "Adams Banjo",
+	"license": "MIT",
+	"devDependencies": {
+		"@babel/cli": "^7.1.0",
+		"@babel/core": "^7.1.0",
+		"@babel/preset-env": "^7.1.0",
+		"@babel/preset-react": "^7.0.0",
+		"babel-loader": "^8.0.2"
+	}
+}
