@@ -18,15 +18,15 @@ class TimerWrapper extends React.Component {
 	}
 	render() {
 		return (
-			<div className="row-fluid">
-				<h2>Timer</h2>
-				<div className="btn-group" role="group">
+			<div className="col">
+				<h2 className="text-primary text-center">Countdown</h2>
+				<div className="btn-group my-4" role="group">
 					<Button time="5" startTimer={this.startTimer} />
 					<Button time="10" startTimer={this.startTimer} />
 					<Button time="15" startTimer={this.startTimer} />
 				</div>
 				<Timer timeLeft={this.state.timeLeft} />
-				<audio id="end-of-time" src="flute_c_long_01.wav" preload="auto" />
+				<audio id="end-of-time" src="flute.wav" preload="auto" />
 			</div>
 		);
 	}

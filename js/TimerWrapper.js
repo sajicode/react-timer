@@ -25,9 +25,11 @@ class TimerWrapper extends React.Component {
 
   render() {
     return React.createElement("div", {
-      className: "row-fluid"
-    }, React.createElement("h2", null, "Timer"), React.createElement("div", {
-      className: "btn-group",
+      className: "col"
+    }, React.createElement("h2", {
+      className: "text-primary text-center"
+    }, "Countdown"), React.createElement("div", {
+      className: "btn-group my-4",
       role: "group"
     }, React.createElement(Button, {
       time: "5",
@@ -42,7 +44,7 @@ class TimerWrapper extends React.Component {
       timeLeft: this.state.timeLeft
     }), React.createElement("audio", {
       id: "end-of-time",
-      src: "flute_c_long_01.wav",
+      src: "flute.wav",
       preload: "auto"
     }));
   }
